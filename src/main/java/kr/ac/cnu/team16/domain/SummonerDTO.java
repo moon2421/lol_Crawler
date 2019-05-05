@@ -1,10 +1,10 @@
-﻿package kr.ac.cnu.team16.domain;
+package kr.ac.cnu.team16.domain;
 
 import lombok.Data;
 
 @Data
 public class SummonerDTO {
-   private int profileIconId;
+    private int profileIconId;
     private String name;
     private String puuid;
     private long summonerLevel;
