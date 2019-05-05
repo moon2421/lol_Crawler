@@ -12,8 +12,9 @@ import java.util.Set;
 public class LeagueApi {
     @Autowired
     private RestTemplate restTemplate;
+    
 
-    private String api_key = "RGAPI-c310224f-9cb6-4a6c-bdd1-b23efb0c726c";
+    private String api_key = "RGAPI-514ea5d7-e312-4685-9f55-04b6ce6d81f3";
     private String requestUrl = "https://kr.api.riotgames.com/lol/league/v4/positions/by-summoner/{encryptedSummonerId}?api_key={api_key}";
 
     public Set<LinkedHashMap> getLeague(String encryptedSummonerId) {
