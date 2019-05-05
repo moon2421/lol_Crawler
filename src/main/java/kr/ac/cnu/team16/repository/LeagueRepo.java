@@ -11,7 +11,7 @@ public class LeagueRepo {
     @Autowired
     private MongoTemplate mongoTemplete;
 
-    public void insertData(LeaguePositionDTO leaguePositionDTO){ 
+    public void insertData(LeaguePositionDTO leaguePositionDTO){ // 안됨
         mongoTemplete.insert(leaguePositionDTO);
     }
 }
