@@ -11,7 +11,7 @@ public class SummonerApi {
     @Autowired
     private RestTemplate restTemplate;
 
-    private String apiKey = "RGAPI-c310224f-9cb6-4a6c-bdd1-b23efb0c726c";
+    private String apiKey = "RGAPI-514ea5d7-e312-4685-9f55-04b6ce6d81f3";
     private String requestUrl = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/{summonerName}?api_key={api_key}";
 
     public SummonerDTO getSummoner(String summonerName) {
