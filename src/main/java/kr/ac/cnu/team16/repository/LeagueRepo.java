@@ -7,4 +7,8 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 @Repository
 public class LeagueRepo {
   private MongoTemplate mongoTemplete;
+  
+    public void insertData(LeaguePositionDTO leaguePositionDTO){ 
+        mongoTemplete.insert(leaguePositionDTO);
+}
 }
