@@ -1,8 +1,10 @@
 package kr.ac.cnu.team16.service;
 
 import kr.ac.cnu.team16.api.LeagueApi;
+import kr.ac.cnu.team16.api.SummonerApi;
 import kr.ac.cnu.team16.domain.LeaguePositionDTO;
 import kr.ac.cnu.team16.repository.LeagueRepo;
+import kr.ac.cnu.team16.domain.SummonerDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Iterator;
@@ -21,6 +23,7 @@ public class LeagueService {
         Iterator<LinkedHashMap> iterator = leagueSet.iterator();
         LinkedHashMap<String, Object> leageHashMap;
         while (iterator.hasNext()) {
+
             leageHashMap = iterator.next();
             LeaguePositionDTO leaguePositionDTO = new LeaguePositionDTO();
 
@@ -40,11 +43,21 @@ public class LeagueService {
             leaguePositionDTO.setVeteran((boolean) leageHashMap.get("veteran"));
             leaguePositionDTO.setInactive((boolean) leageHashMap.get("inactive"));
             leaguePositionDTO.setFreshBlood((boolean) leageHashMap.get("freshBlood"));
-
+            
             leagueRepo.insertData(leaguePositionDTO);
         }
 
         return leagueSet;
     }
 
+    @Service
+    public static class SummonerService {
+        @Autowired
+        private SummonerApi summonerApi;
+
+        public SummonerDTO getSummonerByName(String name) {
+            SummonerDTO summonerDTO = summonerApi.getSummoner(name);
+            return summonerDTO;
+        }
+    }
 }
